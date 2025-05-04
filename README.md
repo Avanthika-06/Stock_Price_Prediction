@@ -27,7 +27,7 @@ Ensure you have Python installed on your machine, and the necessary libraries as
 - **Seaborn**: For creating visualizations like heatmaps.
 - **Scikit-learn**: For data preprocessing and evaluation metrics.
 
-Dataset
+## Dataset
 The dataset used in this project is historical stock price data for Microsoft (MSFT), with daily records. 
 
 Columns in the dataset:
@@ -48,19 +48,21 @@ Name: The stock ticker symbol (MSFT).
 Data Source:
 You can download the dataset from financial sources like Yahoo Finance or use your own historical data for Microsoft.
 
-Usage
+
+## Usage
 Clone or download this repository to your local machine.
 
-Place the MicrosoftStock.csv dataset in your project directory (or update the file path).
+Place your dataset (Microsoft stock data) in your project directory (or update the file path in the script).
 
 Run the script using Python:
 
-bash
-Copy
-Edit
-python stock_price_prediction.py
-Workflow:
-Data Preprocessing:
+- bash
+- Copy
+- Edit
+- python stock_price_prediction.py
+- Workflow:
+
+## Data Preprocessing
 
 Convert the 'Date' column to a datetime object for easier manipulation.
 
@@ -68,50 +70,48 @@ Drop unnecessary columns like Index and Name.
 
 Normalize numerical columns (Open, High, Low, Close, Volume) using StandardScaler.
 
-Visualization:
+## Visualization
 
 Visualize stock price trends and trading volumes over time.
 
 Generate a heatmap to analyze correlations between features.
 
-Model Building:
+## Model Building
 
 An LSTM model is created using TensorFlow/Keras with two LSTM layers and a Dense layer.
 
 Dropout regularization is used to avoid overfitting.
 
-Model Training:
+## Model Training
 
 The model is trained on 95% of the dataset and tested on the remaining 5%.
 
 It predicts the closing price of Microsoft based on historical data.
 
-Prediction:
+## Prediction
 
 After training, the model predicts stock prices for the test set, which is then compared to the actual prices.
 
-Model Evaluation:
-
-Evaluate the model performance using Root Mean Squared Error (RMSE).
-
-Visualize predicted stock prices alongside actual prices for comparison.
-
-Model
+## Model
 The model uses Long Short-Term Memory (LSTM), a type of Recurrent Neural Network (RNN) that excels in capturing dependencies in sequential data. The architecture is as follows:
 
-LSTM Layers: Two layers with 64 units, capturing long-term dependencies in stock prices.
+1. LSTM Layers: Two layers with 64 units, capturing long-term dependencies in stock prices.
 
-Dense Layer: A fully connected layer with ReLU activation to produce the final predicted stock price.
+2. Dense Layer: A fully connected layer with ReLU activation to produce the final predicted stock price.
 
-Dropout Layer: Prevents overfitting by randomly setting input units to 0 during training.
+3. Dropout Layer: Prevents overfitting by randomly setting input units to 0 during training.
 
 The model is compiled with:
 
-Optimizer: Adam optimizer for efficient training.
+1. Optimizer: Adam optimizer for efficient training.
 
-Loss Function: Mean Absolute Error (MAE) for regression problems.
+2. Loss Function: Mean Absolute Error (MAE) for regression problems.
 
-Metrics: Root Mean Squared Error (RMSE) to evaluate prediction accuracy.
+3. Metrics: Root Mean Squared Error (RMSE) to evaluate prediction accuracy.
 
-Results
+## Results
 After training the model, predictions are generated on the test set. The results are visualized in a plot showing both the predicted stock prices and the actual stock prices over time.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+Metrics: Root Mean Squared Error (RMSE) to evaluate prediction accuracy.
